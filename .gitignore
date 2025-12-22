@@ -1,0 +1,28 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Docker
+*.tar
+
+# Kubernetes
+*.log
+
+# Build outputs
+dist/
+build/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Mongo data (VERY IMPORTANT)
+mnt/

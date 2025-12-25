@@ -5,8 +5,6 @@
 [![Docker Image Version](https://img.shields.io/badge/backend-Docker%20Image-blue)](https://hub.docker.com/r/vikassangale/chatapp-backend)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-![ChatApp Screenshot](path/to/screenshot.png)
-*Replace with your frontend screenshot if available*
 
 ---
 
@@ -79,6 +77,7 @@ Browser
                           | MongoDB StatefulSet       |
                           | (Persistent Volume / PVC) |
                           +---------------------------+
+``` 
 
 
 - **MongoDB** uses **Persistent Volumes** for data durability  
@@ -103,6 +102,7 @@ Browser
 ```bash
 git clone https://github.com/Vikas8773/Full_stack_chat_Application.git
 cd Full_stack_chat_Application
+``` 
 
 
 2. Build Docker images:
@@ -110,12 +110,14 @@ cd Full_stack_chat_Application
 ```bash
 docker build -t chatapp-backend ./backend
 docker build -t chatapp-frontend ./frontend
+``` 
 
 
 3. Start kind cluster:
 
 ```bash
 kind create cluster --name chatapp
+``` 
 
 
 4. Apply Kubernetes manifests:
@@ -132,18 +134,21 @@ kubectl apply -f k8s/backend-service.yml
 kubectl apply -f k8s/frontend-deployment.yml
 kubectl apply -f k8s/frontend-service.yml
 kubectl apply -f k8s/chatapp-ingress.yml
+``` 
 
 5. Port-forward services:
 
 ```bash
 kubectl port-forward service/frontend 80:80 -n chat-app
 kubectl port-forward service/backend 5001:5001 -n chat-app
+``` 
 
 
 6. Access the frontend:
 
 ```bash
-ttp://localhost:80
+http://localhost:80
+``` 
 
 ---
 

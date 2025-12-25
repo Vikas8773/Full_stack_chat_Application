@@ -60,7 +60,7 @@ The app uses **StatefulSets** for MongoDB, persistent volumes for data, and **In
 ---
 
 ## Architecture
-
+Frontend <-> Nginx Ingress <-> Backend (Node.js/Express) <-> MongoDB StatefulSet
 
 
 - **MongoDB** uses **Persistent Volumes** for data durability  
@@ -86,3 +86,18 @@ The app uses **StatefulSets** for MongoDB, persistent volumes for data, and **In
 git clone https://github.com/Vikas8773/Full_stack_chat_Application.git
 cd Full_stack_chat_Application
 
+2. Build Docker images:
+docker build -t chatapp-backend ./backend
+docker build -t chatapp-frontend ./frontend
+
+3. Start kind cluster:
+
+kind create cluster --name chatapp
+
+
+4. Apply Kubernetes manifests:
+
+kubectl apply -f k8s/namespace.yml
+kubectl apply -f k8s/mongo-pv.yml
+kubectl apply -f k8s/mongo-secret.yml
+kubectl apply -f

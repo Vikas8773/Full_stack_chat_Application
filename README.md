@@ -11,7 +11,7 @@
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
+- [Architecture](#architecture-diagram)
 - [Setup & Installation](#setup-and-installation)
 - [Usage](#usage)
 - [Kubernetes Deployment Notes](#kubernetes-deployment-notes)

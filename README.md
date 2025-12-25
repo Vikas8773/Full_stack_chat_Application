@@ -3,8 +3,6 @@
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/Vikas8773/Full_stack_chat_Application)](https://github.com/Vikas8773/Full_stack_chat_Application)
 [![GitHub Issues](https://img.shields.io/github/issues/Vikas8773/Full_stack_chat_Application)](https://github.com/Vikas8773/Full_stack_chat_Application/issues)
 [![Docker Image Version](https://img.shields.io/badge/backend-Docker%20Image-blue)](https://hub.docker.com/r/vikassangale/chatapp-backend)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-
 
 ---
 
@@ -14,9 +12,9 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
-- [Setup & Installation](#setup--installation)
+- [Setup & Installation](#setup-and-installation)
 - [Usage](#usage)
-- [Kubernetes Deployment Notes](#kubernetes-deployment)
+- [Kubernetes Deployment Notes](#kubernetes-deployment-notes)
 
 ---
 
@@ -82,11 +80,13 @@ Browser
 
 - **MongoDB** uses **Persistent Volumes** for data durability  
 - **Backend** connects via `MONGODB_URI` environment variable  
-- **Ingress** routes `/` to frontend and `/api` to backend  
+- **Ingress** routes `/` to frontend and `/api` to backend
+
 
 ---
 
-## Setup & Installation
+
+## Setup and Installation
 
 ### Prerequisites
 
@@ -134,6 +134,7 @@ kubectl apply -f k8s/backend-service.yml
 kubectl apply -f k8s/frontend-deployment.yml
 kubectl apply -f k8s/frontend-service.yml
 kubectl apply -f k8s/chatapp-ingress.yml
+kubectl apply -f k8s/chatapp-hpa.yml
 ``` 
 
 5. Port-forward services:
@@ -166,3 +167,4 @@ http://localhost:80
 - Backend & Frontend run as Deployments
 - Ingress routes traffic based on host/path
 - DB credentials are managed using Kubernetes Secrets
+- HPA automatically scales backend pods based on CPU utilization to handle varying traffic loads
